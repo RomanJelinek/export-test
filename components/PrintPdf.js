@@ -4,7 +4,7 @@ import Classic from './Classic';
 import TwoCircles from './TwoCircles';
 
 const pageStyle = `
- @media print {
+@media print {
   html, body {
     height: initial !important;
     overflow: initial !important;
@@ -24,7 +24,6 @@ const pageStyle = `
   size: auto;
   margin: 20mm;
 }
-
 `;
 
 const documentTitle = 'export';
@@ -35,6 +34,7 @@ const getPageMargins = () => {
 
 const PrintPdf = () => {
   const componentRef = useRef(null);
+
   const handlePrint = useReactToPrint({
     content: () => componentRef.current,
     pageStyle,

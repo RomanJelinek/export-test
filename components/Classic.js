@@ -3,7 +3,7 @@ import { styled, Typography } from '@mui/material';
 
 const Classic = () => {
   return (
-    <Paper
+    <PaperContainer
       sx={{
         background: 'black',
         backgroundSize: 'cover',
@@ -17,11 +17,36 @@ const Classic = () => {
         <StyledBottomText>Test 1st row</StyledBottomText>
         <StyledBottomText>Tst 2nd Row</StyledBottomText>
       </BottomTextWrapper>
-    </Paper>
+    </PaperContainer>
   );
 };
 
 export default Classic;
+
+const PaperContainer = styled('div')`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: black;
+  flex-direction: column;
+  width: 500px;
+  height: 700px;
+
+  @media print {
+    width: 100% !important;
+    height: 100vh !important;
+    margin: unset !important;
+  }
+
+  ${({ theme }) => `
+    margin: ${theme.spacing(2)};
+    ${theme.breakpoints.down('md')} {
+      width: 300px;
+      height: 420px;
+      margin: 10px;
+    }
+  `}
+`;
 
 const Paper = styled('div')(({ theme: $ }) => ({
   display: 'flex',
