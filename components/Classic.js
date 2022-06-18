@@ -31,6 +31,7 @@ const PaperContainer = styled('div')`
   flex-direction: column;
   width: 500px;
   height: 700px;
+  position: relative;
 
   @media print {
     width: 100% !important;
@@ -79,14 +80,14 @@ const TextWrapper = styled('div')(({ theme: $ }) => ({
   textAlign: 'center',
   position: 'absolute',
   bottom: '20%',
-  left: '30%',
+  left: '50%',
   transform: 'translate(-50%, 0)',
-  [$.breakpoints.up('lg')]: {
-    marginLeft: '-200px',
-  },
-  [$.breakpoints.down('md')]: {
-    width: '230px',
-  },
+  // [$.breakpoints.up('lg')]: {
+  //   marginLeft: '-200px',
+  // },
+  // [$.breakpoints.down('md')]: {
+  //   width: '230px',
+  // },
 }));
 
 const BottomTextWrapper = styled('div')(({ theme: $ }) => ({
@@ -95,28 +96,46 @@ const BottomTextWrapper = styled('div')(({ theme: $ }) => ({
   textAlign: 'center',
   position: 'absolute',
   bottom: '12%',
-  left: '30%',
+  left: '50%',
   transform: 'translate(-50%, 0)',
-  [$.breakpoints.up('lg')]: {
-    marginLeft: '-200px',
-  },
-  [$.breakpoints.down('md')]: {
-    width: '230px',
-  },
+  // [$.breakpoints.up('lg')]: {
+  //   marginLeft: '-200px',
+  // },
+  // [$.breakpoints.down('md')]: {
+  //   width: '230px',
+  // },
 }));
 
-const StyledEditorTitle = styled(Typography)(({ theme: $ }) => ({
-  fontSize: 28,
-  lineHeight: 1.2,
-  [$.breakpoints.down('md')]: {
-    fontSize: 15,
-  },
-}));
+// const StyledEditorTitle = styled(Typography)(({ theme: $ }) => ({
+//   fontSize: 28,
+//   lineHeight: 1.2,
+//   [$.breakpoints.down('md')]: {
+//     fontSize: 15,
+//   },
+// }));
 
-const StyledBottomText = styled(Typography)(({ theme: $ }) => ({
-  fontSize: 17,
-  lineHeight: 1.2,
-  [$.breakpoints.down('md')]: {
-    fontSize: 9,
-  },
-}));
+// const StyledBottomText = styled(Typography)(({ theme: $ }) => ({
+//   fontSize: 17,
+//   lineHeight: 1.2,
+//   [$.breakpoints.down('md')]: {
+//     fontSize: 9,
+//   },
+// }));
+
+const StyledEditorTitle = styled(Typography)`
+  font-size: 28px;
+  line-height: 1.2;
+
+  @media print {
+    font-size: 3rem;
+  }
+`;
+
+const StyledBottomText = styled(Typography)`
+  font-size: 17px;
+  line-height: 1.2;
+
+  @media print {
+    font-size: 1.3rem;
+  }
+`;
